@@ -1,0 +1,14 @@
+<h2>My Notes</h2>
+
+<%= link_to "New Note", new_note_path, class: "btn btn-success" %>
+
+<% @notes.each do |note| %>
+  <div class="card">
+    <h3><%= note.title %></h3>
+    <p><%= note.description %></p>
+
+    <%= link_to "Show", note, class: "btn btn-primary" %>
+    <%= link_to "Edit", edit_note_path(note), class: "btn btn-primary" %>
+    <%= link_to "Delete", note, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  </div>
+<% end %>

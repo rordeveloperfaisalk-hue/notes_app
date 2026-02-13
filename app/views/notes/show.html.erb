@@ -1,0 +1,14 @@
+<% if notice %>
+  <p style="color: green;"><%= notice %></p>
+<% end %>
+
+<div class="card">
+  <h2><%= @note.title %></h2>
+  <p><%= @note.description %></p>
+</div>
+
+<div>
+  <%= link_to "Edit", edit_note_path(@note), class: "btn btn-primary" %>
+  <%= link_to "Back", notes_path, class: "btn btn-primary" %>
+  <%= link_to "Delete", @note, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+</div>
